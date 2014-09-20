@@ -1,0 +1,377 @@
+@import 'variables';
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+/*login*/
+
+.sign-in-bg{
+	background: $brand-primary;
+	color: $wtf-white;
+	min-height:500px;
+input[type="submit"]{
+	background: $steel-grey;
+	color: $wtf-white;
+	}
+	.sign-in-container{
+		margin-top:100px;
+	}
+  }
+
+
+.sign-in-footer-bg{
+	background: $wtf-white;
+	span, a{
+		color: $text-color;
+	}
+	.forum-logo-sml{
+		width: $forum-logo-sml-size;
+	}
+}
+
+/*feedpage*/
+
+.sidebar-agg{
+	padding-left:0px;
+	padding-right:0px;
+}
+
+.sidebar-nav{
+	background: $wtf-white;
+	border-right: 1px solid $text-color;
+	hr{
+		width: 20%;
+		color: $text-color;
+		padding:0px;
+		margin:0px 0px 0px 88px;
+		align:center;
+	}
+
+	.forum-logo-sml{
+		width: $forum-logo-sml-size;
+		margin-bottom: 35px;
+		margin-left:auto;
+		margin-right:auto;
+	}
+	.sidebar_profile{
+		background-image: url('nav_icon_profile.png');
+		background-repeat: no-repeat;
+		background-size:  $sidebar-icon-size;
+		background-position: center center;
+		line-height: 55px;
+
+	&.active{
+		background-image: url('nav_icon_profile_active.png');
+		background-color: $sidebar-bg-active;
+
+		}
+	p{
+		position:relative;
+		top:15px;
+		font-size:10px;
+		text-align:center;
+		padding-top:20px;
+	}
+	}
+
+	.sidebar_feed{
+		background-image: url('nav_icon_feed.png');
+		background-repeat:no-repeat;
+		background-size: $sidebar-icon-size;
+		background-position: center center;
+		line-height: 55px;
+	&.active{
+		background-image: url('nav_icon_feed_active.png');
+		background: $sidebar-bg-active;
+		}
+	p{
+		position:relative;
+		top:15px;
+		font-size:10px;
+		text-align:center;
+		padding-top:20px;
+	}
+	}
+	.sidebar_students{
+		background-image: url('nav_icon_students.png');
+		background-repeat:no-repeat;
+		background-size: $sidebar-icon-size;
+		background-position: center center;
+		line-height: 55px;
+	&.active{
+		background-image: url('nav_icon_students_active.png');
+		background: $sidebar-bg-active;
+		}	
+	p{
+		position:relative;
+		top:15px;
+		font-size:10px;
+		text-align:center;
+		padding-top:20px;
+	 }
+	}
+	.sidebar_signout{
+		background-image: url('nav_icon_signout.png');
+		background-repeat:no-repeat;
+		background-size: $sidebar-icon-size;
+		background-position: center center;
+		line-height: 55px;
+	&.active{
+		background-image: url('nav_icon_signout_active.png');
+		background: $sidebar-bg-active;
+		}
+	p{
+		position:relative;
+		top:15px;	
+		font-size: 10px;
+		text-align:center;
+		padding-top:20px;		
+	 }
+    }
+}
+
+.top-heading{
+	background: $brand-primary;
+	color:$wtf-white;
+		p{
+	font-family: $font-family-base;
+	font-weight: 300;
+	font-size: 18px;
+	margin-left:10px;
+	margin-top:10px;
+	}
+	span{
+		font-size:18px;
+		font-weight: 300;
+		margin-right:10px;
+		margin-top:10px;
+	}
+}
+
+.nav-heading{
+	background: $brand-grey;
+	color:white;
+	font-family:$font-family-base;
+	font-size:12px;
+	font-weight:700;
+	padding-top:10px;
+	padding-bottom:10px;
+
+	.posts,.job-posts{
+		border-right: 1px solid $wtf-white;
+	}
+	.job-posts{
+		border-left:1px solid $wtf-white;
+	}
+
+	.all_posts,.all_questions,.all_jobposts,.all_announcements{
+		text-align: center;
+		margin-top:20px;
+		margin-bottom:20px;
+			img{
+				width:25px;
+				padding-right:5px
+			}
+	}
+}
+
+.all_questions{
+	img{
+	height:28px;
+	width:20px;
+}
+}
+.post-category{
+		text-indent:-9999px;
+		height:85px;
+		margin-top:30px;
+		width:auto;
+	&.questions-post{
+background-image: url('post_icon_questions.png');
+background-repeat:no-repeat;
+background-size:50px;
+
+	}
+	&.jobs-post{
+background-image: url('post_icon_jobs.png');
+background-repeat:no-repeat;
+background-size:60px;
+	}
+	&.announcements-post{
+background-image: url('post_icon_announcements.png');
+background-repeat:no-repeat;
+background-size:55px;
+	}
+}
+
+.post-text{
+	margin-top:30px;
+	.author {
+		font-family: $font-family-base;
+		font-size:12px;
+		font-weight: 300;
+	span{
+		font-family: $font-family-base;
+		font-size:10px;
+		font-weight: 600;
+		}
+	}
+	.text-body{
+		font-family: $font-family-base;
+		font-size: 12px;
+		font-weight: 400;
+	}
+}
+
+.like_status{
+	background-image: url('like_inactive.png');
+	background-repeat:no-repeat;
+	height:40px;
+	text-indent: -9999px;
+	position:absolute;
+	top:0px;
+	right:10px;
+	background-size:30px;
+		&.active{
+			background-image: url('like_active.png');
+		}
+}
+
+.chat-bubble{
+	border-radius:100%;
+	border:none;
+}
+
+.convo-row{
+	&.questions-post{
+background: $questions-bg-dark;
+
+	}
+	&.jobs-post{
+background: $jobs-bg-dark;
+	}
+	&.announcements-post{
+background: $announcement-bg-dark;
+	}
+}
+
+.colormatch{
+	border-width: thin;
+	border-radius:5px;
+	color:#768994;
+	text-align:left;
+&.questions-post{
+	background: $questions-bg-light;
+
+	}
+&.jobs-post{
+	background: $jobs-bg-light;
+	}
+&.announcements-post{
+	background: $announcement-bg-light;
+	}
+}
+
+.friend-avatar{
+	border-radius:100%;
+	border: 1px solid $wtf-white;
+	margin-top:15px;
+&.questions-post{
+border: 1px solid $questions-primary;
+}
+&.jobs-post{
+border: 1px solid $jobs-primary;
+}
+&.announcements-post{
+border: 1px solid $announcement-primary;
+}
+}
+
+.comments-row{
+	font-family:$font-family-base;
+	background:$wtf-white;
+		p{
+		font-family: $font-family-base;
+		font-size:12px;
+		span{
+			font-weight: 700;
+			font-size: 10px;
+		}
+	}
+}
+
+.submit-button{
+	padding-left:5px;
+}
+input.post-submit{
+		color:$wtf-white;
+		background: $steel-grey;
+		margin-top:15px;
+		border-radius:15px;
+		border:none;
+		font-family: $font-family-base;
+		font-size: 10px;
+		padding: 5px 10px 5px 10px;
+}
+
+.textarea-row{
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+hr.feed-divider{
+	color: $steel-grey;
+	border: 5px solid $steel-grey;
+	margin-left:-15px;
+	margin-right:-15px;
+	margin-top:0px;
+	margin-bottom:0px;
+}
+.pag-row{
+	background:#768994;
+}
+.pagination{
+	li a{
+	background: #768994;
+	border:none;
+	color: $wtf-white;
+}
+}
+
+.footing{
+	background: $steel-grey;
+	font-size:11px;
+	.footerleft{
+		color:$wtf-white;
+		margin-left:0px;
+			p{
+				margin-top:15px;
+			}
+			span{
+				font-size:8px;
+			}
+	}
+	.footerright{
+		color: #768994;
+		text-align:right;
+			p{
+				margin-top:20px;
+				font-size:8px;
+			}
+	}
+}
