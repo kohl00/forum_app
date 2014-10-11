@@ -1,0 +1,32 @@
+<div class="col-md-2 sidebar-nav">
+		<div class="col-md-12">
+			<%= link_to static_feed_path do %>
+				<img src="<%= image_url 'forum_logo_sml.png' %>" class="img-responsive forum-logo-sml"/>
+			<% end %>
+		</div>
+		<hr>
+		<%= link_to profile_path do %>
+			<div class="col-md-12 sidebar_profile <%= controller_name == 'profiles' ? 'sidenav_agg' : nil %>">
+				<p>PROFILE</p>
+			</div>
+		<% end %>
+		<hr>
+		<%= link_to static_feed_path do %>
+			<div class="col-md-12 sidebar_feed <%= controller_name == 'static' ? 'sidenav_agg' : nil %>">
+				<p>FEED</p>
+			</div>
+		<% end %>
+		<hr>
+		<%= link_to cohort_path do %>
+			<div class="col-md-12 sidebar_students <%= controller_name == 'cohort' ? 'sidenav_agg' : nil %>">
+				<p>STUDENTS</p>
+			</div>
+		<% end %>
+		<hr>
+		<%= link_to destroy_user_session_path,:method=>:delete,:data=>{:confirm=>'Are you sure?'} do %>
+			<div class="col-md-12 sidebar_signout">
+				<p>SIGNOUT</p>
+			</div>
+		<% end %>
+	    <hr>		<!--col-md-2 row-->
+</div>	

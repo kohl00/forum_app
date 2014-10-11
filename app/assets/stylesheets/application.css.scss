@@ -18,50 +18,85 @@
  *= require_self
  */
 
-/*login*/
 
-.sign-in-bg{
-	background: $brand-primary;
-	color: $wtf-white;
-	min-height:500px;
-input[type="submit"]{
-	background: $steel-grey;
-	color: $wtf-white;
-	}
-	.sign-in-container{
-		margin-top:100px;
-	}
-  }
-
-
-.sign-in-footer-bg{
-	background: $wtf-white;
-	span, a{
-		color: $text-color;
-	}
-	.forum-logo-sml{
-		width: $forum-logo-sml-size;
-	}
+.body{
+	border-left:1px solid $steel-grey;
 }
+/*login*/
+.welcome{
+	text-align:center;
+}
+#landing-page-footer{
+  z-index: 1;
+  background-color: $wtf-white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  overflow:hidden;
+  .alert-icon-columns, .description-columns{
+  	padding-top:20px;
+}
+}
+#landing-page-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-image: image-url('fixed-bg.png');
+  background-size: cover;
+  background-position: bottom center;
+  overflow:hidden;
+  .landing-page-content-row{
+  	position: absolute;
+  	bottom:40%;
+  	width: 100%;
+  }
+  .forgot{
+  	height:34px;
+  		img{
+  			width:20px;
+  		}
+  }
+  .log-in{
+  	text-align:center;
+  	.btn-secondary{
+  		color:$wtf-white;
+  	}
+  }
+}
+#hfc-academy-logo {
+  width: 130px;
+  height: 130px;
+}
+#notice-icon {
+  width: 56px * 0.5;
+  height: 56px * 0.5;
+  margin-top:20px;
+}
+
 
 /*feedpage*/
 
-.sidebar-agg{
-	padding-left:0px;
-	padding-right:0px;
-}
+
 
 .sidebar-nav{
 	background: $wtf-white;
 	border-right: 1px solid $text-color;
+	padding-right:0px;
+	padding-left:0px;
 	hr{
 		width: 20%;
 		color: $text-color;
 		padding:0px;
-		margin:0px 0px 0px 88px;
+		margin:0px 0px 0px 75px;
 		align:center;
 	}
-
+}
 	.forum-logo-sml{
 		width: $forum-logo-sml-size;
 		margin-bottom: 35px;
@@ -74,12 +109,10 @@ input[type="submit"]{
 		background-size:  $sidebar-icon-size;
 		background-position: center center;
 		line-height: 55px;
-
-	&.active{
+	&.sidenav_agg{
 		background-image: url('nav_icon_profile_active.png');
-		background-color: $sidebar-bg-active;
-
-		}
+		background-color: #f7f8f7;
+	}
 	p{
 		position:relative;
 		top:15px;
@@ -95,9 +128,9 @@ input[type="submit"]{
 		background-size: $sidebar-icon-size;
 		background-position: center center;
 		line-height: 55px;
-	&.active{
+	&.sidenav_agg{
 		background-image: url('nav_icon_feed_active.png');
-		background: $sidebar-bg-active;
+		background-color: #f7f8f7;
 		}
 	p{
 		position:relative;
@@ -113,9 +146,9 @@ input[type="submit"]{
 		background-size: $sidebar-icon-size;
 		background-position: center center;
 		line-height: 55px;
-	&.active{
+	&.sidenav_agg{
 		background-image: url('nav_icon_students_active.png');
-		background: $sidebar-bg-active;
+		background-color: #f7f8f7;
 		}	
 	p{
 		position:relative;
@@ -131,9 +164,9 @@ input[type="submit"]{
 		background-size: $sidebar-icon-size;
 		background-position: center center;
 		line-height: 55px;
-	&.active{
+	&.sidenav_agg{
 		background-image: url('nav_icon_signout_active.png');
-		background: $sidebar-bg-active;
+		background-color: #f7f8f7;
 		}
 	p{
 		position:relative;
@@ -143,7 +176,6 @@ input[type="submit"]{
 		padding-top:20px;		
 	 }
     }
-}
 
 .top-heading{
 	background: $brand-primary;
@@ -156,10 +188,23 @@ input[type="submit"]{
 	margin-top:10px;
 	}
 	span{
-		font-size:18px;
-		font-weight: 300;
-		margin-right:10px;
-		margin-top:10px;
+		background-image: image_url('drop_down.png');
+		background-size: 25px;
+		background-repeat:no-repeat;
+		width:25px;
+		text-indent:-99999px;
+		margin-top:15px;
+		margin-right:15px;
+	
+		&.active {
+		background-image: image_url('close.png');
+		background-size: 20px;
+		background-repeat:no-repeat;
+		width:25px;
+		text-indent:-99999px;
+		margin-top:15px;
+		margin-right:15px;
+		}
 	}
 }
 
@@ -183,6 +228,10 @@ input[type="submit"]{
 		text-align: center;
 		margin-top:20px;
 		margin-bottom:20px;
+		color:$wtf-white;
+			span{
+				color:white;
+			}
 			img{
 				width:25px;
 				padding-right:5px
@@ -196,6 +245,13 @@ input[type="submit"]{
 	width:20px;
 }
 }
+
+.dropdown{
+	width:100%;
+	border:none;
+	color:black;
+	margin-top:20px;
+}
 .post-category{
 		text-indent:-9999px;
 		height:85px;
@@ -204,18 +260,17 @@ input[type="submit"]{
 	&.questions-post{
 background-image: url('post_icon_questions.png');
 background-repeat:no-repeat;
-background-size:50px;
-
+background-size:40px;
 	}
 	&.jobs-post{
 background-image: url('post_icon_jobs.png');
 background-repeat:no-repeat;
-background-size:60px;
+background-size:45px;
 	}
 	&.announcements-post{
-background-image: url('post_icon_announcements.png');
+background-image: url('post_icon_announcement.png');
 background-repeat:no-repeat;
-background-size:55px;
+background-size:40px;
 	}
 }
 
@@ -238,6 +293,11 @@ background-size:55px;
 	}
 }
 
+.like-btn{
+	background-color:transparent;
+	border:none;
+	width:35px;
+}
 .like_status{
 	background-image: url('like_inactive.png');
 	background-repeat:no-repeat;
@@ -247,14 +307,13 @@ background-size:55px;
 	top:0px;
 	right:10px;
 	background-size:30px;
-		&.active{
+		&.active {
 			background-image: url('like_active.png');
 		}
 }
 
-.chat-bubble{
-	border-radius:100%;
-	border:none;
+span.glyphicon-comment{
+	font-size:40px;
 }
 
 .convo-row{
@@ -276,21 +335,23 @@ background: $announcement-bg-dark;
 	color:#768994;
 	text-align:left;
 &.questions-post{
-	background: $questions-bg-light;
+	background: $questions-ultralight;
 
 	}
 &.jobs-post{
-	background: $jobs-bg-light;
+	background: $jobs-ultralight;
 	}
 &.announcements-post{
-	background: $announcement-bg-light;
+	background: $announcement-ultralight;
 	}
 }
 
 .friend-avatar{
 	border-radius:100%;
 	border: 1px solid $wtf-white;
-	margin-top:15px;
+	margin-top:10px;
+	margin-bottom:10px;
+	width:65px;
 &.questions-post{
 border: 1px solid $questions-primary;
 }
@@ -328,10 +389,28 @@ input.post-submit{
 		font-size: 10px;
 		padding: 5px 10px 5px 10px;
 }
+input.post-submit-post{
+	color:$wtf-white;
+	background: $steel-grey;
+	margin-top:25px;
+	margin-left: 20px;
+	border-radius:15px;
+	border:none;
+	font-family: $font-family-base;
+	font-size: 10px;
+	padding: 5px 10px 5px 10px;
+}
 
 .textarea-row{
 	margin-top:10px;
 	margin-bottom:10px;
+	border-radius:10px;
+
+		textarea{
+			background: #dce0dc;
+			border:none;
+			color:#4c4c4c;
+		}
 }
 
 hr.feed-divider{
@@ -345,14 +424,27 @@ hr.feed-divider{
 .pag-row{
 	background:#768994;
 }
-.pagination{
-	li a{
-	background: #768994;
+.pagination > li > a, .pagination > li > span{
+	background-color:transparent;
 	border:none;
-	color: $wtf-white;
-}
-}
+	color:white
 
+}
+.pagination > .disabled > span, .pagination > .disabled > span:hover, .pagination > li > a:hover{
+	background-color:transparent;
+	border:none;
+	color:white;
+}
+.active > span, .pagination > .active > span:hover{
+	background:none;
+	border:none;
+	color:white;
+}
+.pagination > .active > span{
+	background:$wtf-white;
+	border-radius:100%;
+	color:$brand-primary;
+}
 .footing{
 	background: $steel-grey;
 	font-size:11px;
@@ -374,4 +466,249 @@ hr.feed-divider{
 				font-size:8px;
 			}
 	}
+}
+
+//feedpost
+
+.feed_post-post-row{
+	background:$color-primary-alt;
+	display:none;
+}
+
+//myprofile
+
+.with-red-bg{
+	margin-top:60px;
+	margin-left:20px;
+	margin-bottom:10px;
+}
+input#user_first_name, input#user_last_name{
+	display:inline;
+	font-family: $font-family-base;
+	color:$wtf-white;
+	font-weight: 300;
+	font-size: 24px;
+	margin-right:15px;
+	background:$brand-primary;
+	border:none;
+	box-shadow: 1px 0px 2px 0px $brand-grey inset;
+}
+
+.personal-links{
+	background:$brand-primary;
+	.profile-pic{
+		padding-left:0px;
+	}
+	.profile-name-edit{
+		margin-top:60px;
+		margin-left:20px;
+		margin-bottom:10px;
+		p{
+			display:inline;
+			font-family: $font-family-base;
+			color:$wtf-white;
+			font-weight: 300;
+			font-size: 24px;
+			margin-right:15px;
+
+		}
+	.edit-icon{
+		img{
+		width:20px;
+		vertical-align: top;
+	}
+	}
+}	
+
+.link-buttons li {
+	display:inline;
+	img{
+		margin-right: 10px;
+		position:relative;
+		left:8px;
+		top:5px;
+		width: 20px;
+		}
+	}
+}
+.about-section{
+	background:$brand-grey;
+	.about-me,.interests{
+		font-family: $font-family-base;
+		color:$wtf-white;
+		font-size: 21px;
+		font-weight: 300;
+		margin-top:30px;
+	}
+	.about-me p, .interests p{
+		font-size: 16px;
+		margin-top: 10px;
+	}
+	.interests p{
+		margin-bottom:50px;
+	}
+}
+
+//edit
+
+.edit-profile-head{
+	background:$brand-primary;
+	color:white;
+	font-family: $font-family-base;
+	.profile-pic{
+		padding-left:0px;
+	}
+	.name-edit textarea{
+		background:#f17a71;
+		border:none;
+		font-size: 16px;
+		margin-top:30px;
+		margin-left:30px;
+		color:$wtf-white;
+	}
+}
+
+.edit-profile-body{
+	background: $brand-grey;
+	font-family:$font-family-base;
+	color:white;
+	font-weight:300;
+	.about-me-edit, .interests-edit{
+		margin-top:10px;
+		margin-bottom: 15px;
+		p{
+			font-size:18px;
+		}
+	}
+	textarea{
+		background: #91A1A9;
+		border:none;
+		font-size:12px;
+		color:$wtf-white;
+		border-radius:10px;
+	}
+	.social-list ul{
+		padding-left:0px;
+		list-style-type: none;
+		li{
+		margin-top:5px; 
+	}
+	}
+	.submit-changes{
+		margin-bottom: 30px;
+		margin-top:30px;
+		a{
+			color:$wtf-white;
+			text-decoration: underline;
+		}
+		button{
+			color:$brand-grey;
+			background:$wtf-white;
+			border-radius:20px
+		}
+	}
+}
+
+.directory-page{
+	background:$brand-grey;
+}
+.directory-head{
+	color:$wtf-white;
+	margin-left:10px;
+}
+.dropdown{
+display:inline;
+margin-left: 800px;
+}
+.cohort-group{
+	margin-bottom:10px;
+	padding-left:0px;
+	padding-right:0px;
+}
+.cohort-box{
+	padding-left:0px;
+	padding-right:0px;
+.cohort-thumb{
+	position:relative;
+	background: $brand-primary;
+	margin-bottom:30px;
+}
+span{
+	position:absolute;
+	width:179px;
+	bottom:0px;
+	color:white;
+	text-align:left;
+	font-size:10px;
+	line-height:30px;
+	background:$brand-primary;
+}
+}
+
+.profile-shadow{
+	border-radius:100%;
+	background:$color-primary-alt;
+	width: 35px;
+	height: 35px;
+	display:inline-block;
+	background-position-y: 40px;
+}
+
+.github .form-control {
+	background-image: image_url('social_github.png');
+	background-repeat:no-repeat;
+	background-size:20px;
+	background-position: 5px center;
+	text-indent:20px;
+	background-color: $steel-grey;
+	border:none;
+	color:$wtf-white;
+}
+.skype .form-control{
+	background-image: image_url('social_skype.png');
+	background-repeat:no-repeat;
+	background-size:20px;
+	background-position: 5px center;
+	text-indent:20px;
+	background-color: $steel-grey;
+	border:none;
+	color:$wtf-white;
+}
+.email .form-control{
+	background-image: image_url('social_email.png');
+	background-repeat:no-repeat;
+	background-size:20px;
+	background-position: 5px center;
+	text-indent:20px;
+	background-color: $steel-grey;
+	border:none;
+	color:$wtf-white;
+}
+.twitter .form-control{
+	background-image: image_url('social_twitter.png');
+	background-repeat:no-repeat;
+	background-size:20px;
+	background-position: 5px center;
+	text-indent:20px;
+	background-color: $steel-grey;
+	border:none;
+	color:$wtf-white;
+}
+.website .form-control{
+	background-image: image_url('social_website.png');
+	background-repeat:no-repeat;
+	background-size:20px;
+	background-position: 5px center;
+	text-indent:20px;
+	background-color: $steel-grey;
+	border:none;
+	color:$wtf-white;
+}
+
+.disabled{
+	opacity: .5;
+}
+
+.profile-update-btn{
+	border-radius:5px;
 }

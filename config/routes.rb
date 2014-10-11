@@ -1,15 +1,37 @@
 Rails.application.routes.draw do
 
+  devise_for :users,
+    controllers: {
+      sessions: 'sessions'
+    }
+
+  resources :posts do
+    resources :comments
+  end
+
+  get '/profile' => 'profiles#profile', :as => :profile
+
+  get '/profile/edit' => 'profiles#edit'
+
+  post 'profile/update' =>'profiles#update'
+
+
+  get 'likes/create'
+
+  post 'posts/:id/like' => 'likes#create', :as =>:like_post
+
+  get 'cohort/cohort' => 'cohort#directory', :as=> :cohort
+
+  get 'cohort/students/:id' => 'cohort#show', :as=> :students_profile
+
+
+  get 'category/:category' => 'static#feed', :as => :category 
 
   get 'static/login' 
-  
-  get 'static/my_profile'
 
   get 'static/feed'
 
-  get 'static/feed_post'
-
-  get 'static/directory'
+  root 'static#feed'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

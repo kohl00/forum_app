@@ -1,0 +1,2 @@
+$('#post-it-note').prepend("<%= j (render partial: 'static/post_template', locals: {:post => @post}) %>");
+UnobtrusiveFlash.showFlashMessage('Thanks for sharing!', {type: 'success'})

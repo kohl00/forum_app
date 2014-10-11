@@ -1,0 +1,51 @@
+<div class="row personal-links">
+	<div class="col-md-4 profile-pic">
+		
+		<%= image_tag @user.avatar.url, :class=>'img-responsive' %>
+	</div>			<!--profilepic-->
+	<div class="col-md-8">
+		<div class="row profile-name-edit">
+			<p><%= @user.full_name %></p><%= link_to image_tag('edit_icon.png'), profile_edit_path, :class=>'edit-icon'%>
+		</div>
+		<div class="row">
+			<ul class="link-buttons">
+				<li><div class="profile-shadow <%= 'disabled' if @user.email.empty? %>"><%= mail_to @user.email,image_tag('social_email.png'), target: "_blank" %></div></li>
+				<li><div class="profile-shadow <%= 'disabled' if @user.github_profile.empty? %>"><%= link_to image_tag('social_github.png'),@user.github_profile, target: "_blank" %></div></li>
+				<li><div class="profile-shadow <%= 'disabled' if @user.skype_profile.empty? %>"><%= link_to image_tag('social_skype.png'),@user.skype_profile, target: "_blank" %></div></li>
+				<li><div class="profile-shadow <%= 'disabled' if @user.twitter_profile.empty? %> "><%= link_to image_tag('social_twitter.png'),@user.twitter_profile, target: "_blank" %></div></li>
+				<li><div class="profile-shadow <%= 'disabled' if @user.personal_website.empty? %> "><%= link_to image_tag('social_website.png'), @user.personal_website, target: "_blank" %></div></li>
+			</ul>
+		</div>
+	</div>			<!--name&links-->
+	</div>
+	<div class="row about-section">
+	<div class="col-md-10 col-md-offset-1 about-me">
+		About Me
+		<p>
+			<%= @user.about_me %>
+		</p>
+	</div>
+	<div class="col-md-10 col-md-offset-1 interests">
+		Professional Interests
+		<p>
+			<%= @user.interests %>
+		</p>
+	</div>
+		
+	<div class="col-md-12 footing">
+
+			<div class="col-md-4 col-md-offset-1 footerleft">
+				<p> 
+						Happy Fun Corp Alumni Forum<br>
+					<span>
+						Built for the students by the students
+					</span>
+				</p>
+			</div>
+			<div class="col-md-7 footerright pull-right">
+				<p>
+					Happy Fun Corp All rights Reserved
+				</p>
+			</div>
+	</div>
+</div>

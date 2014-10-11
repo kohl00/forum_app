@@ -1,5 +1,11 @@
 source 'https://rubygems.org'
 
+gem 'aws-sdk'
+gem "dotenv-rails", groups: [:development, :test]
+gem "paperclip", "~> 4.2"
+gem 'unobtrusive_flash', '>=3'
+gem 'will_paginate-bootstrap'
+gem 'devise'
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.2.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

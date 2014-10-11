@@ -1,4 +1,6 @@
 Rails.application.configure do
+
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -31,6 +33,15 @@ Rails.application.configure do
   # Checks for improperly declared sprockets dependencies.
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
+
+  config.paperclip_defaults = {
+  :storage => :s3,
+  :path => "/#{ENV['S3_PATH_PREFIX']}/:class/:attachment/:id_partition/:style/:filename",
+  :s3_credentials => {
+    :bucket => ENV['S3_BUCKET_NAME']
+  },
+  :s3_permissions => :public_read
+}
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true

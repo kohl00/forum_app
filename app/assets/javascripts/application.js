@@ -15,3 +15,20 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//=require unobtrusive_flash
+//=require unobtrusive_flash_bootstrap
+
+UnobtrusiveFlash.flashOptions['timeout'] = 2000; // milliseconds
+
+$(function(){
+
+	$(document).on("click",".drop-down",function (){
+		
+		$(this).toggleClass("active");
+		$('.feed_post-post-row').slideToggle();
+		});
+});
+
+
+
+

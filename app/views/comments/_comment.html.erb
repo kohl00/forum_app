@@ -1,0 +1,14 @@
+<div class="row">
+	<div class="col-md-2 col-md-offset-1 user-image">
+		<!--img class="friend-avatar <%= comment.post.category %>-post" src="http://placehold.it/50x50"/-->
+		<%= image_tag comment.user.avatar.url(:thumb), :class=>"#{comment.post.category}-post img-responsive friend-avatar" %>
+	</div>
+	<div class="col-md-8">
+		<p class="author">
+			<span><%= comment.user.first_name %></span> //<%= comment.created_at.strftime("%d %b. %Y") %>
+		</p>
+		<p class="author">
+			<%= comment.content %> 
+		</p>
+	</div>
+</div>

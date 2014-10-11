@@ -1,0 +1,108 @@
+<div class="row">
+		<div class="col-md-12">
+			<div class="row top-heading">
+					<div class="col-md-10 top-heading">
+						<p> Got some news to share?</p>
+					</div>
+					<div class="col-md-2 top-heading">
+						<span class="drop-down pull-right">dd</span>
+					</div>
+			</div>
+		</div>
+
+		<div class="col-md-12 poster">
+			<%= form_for(@post, remote: true) do |f| %>
+				<div class="row feed_post-post-row">
+					<div class="col-md-2 col-md-offset-1">
+						<% if @post.errors.any? %>
+				            <div id="error_explanation">
+				              	<h3><%= pluralize(@post.errors.count, "error") %> prohibited this activity from being saved: </h3>
+				              	<ul>
+				                	<%= @post.errors.full_messages.each do |msg| %>
+				                    	<li> <%= msg %></li>
+	   								<% end %>
+	  							</ul>
+							</div>
+						<% end %>
+						<%= f.label :category, class: 'sr-only' %>
+	     				<%= f.select(:category,['Announcements','Jobs','Questions'],{include_blank: "Select a Topic"}, class: 'dropdown') %>
+					</div>
+					<div class="col-md-8 textarea-row">
+						<%= f.text_area :content, class: 'form-control' %>
+					</div>
+					<div class="col-md-1 submit-button">
+						<%= f.submit "Submit", class: 'post-submit-post' %>
+					</div>
+				</div>
+			<% end %>
+		</div>	
+
+		<div class="col-md-12">
+			<div class="row nav-heading">
+				<div class="col-md-3 posts">
+					<div class="all_posts">
+						<%= link_to static_feed_path do %>
+							<%= image_tag('subnav_allposts.png') %>
+							<span>ALL POSTS</span>
+						<% end %>
+					</div>
+				</div>
+				<div class="col-md-3 questions">
+					<div class="all_questions">
+						<%= link_to category_path(:questions) do %>
+							<%= image_tag('subnav_question.png') %>
+							<span>QUESTIONS</span>
+						<% end %>
+					</div>
+				</div>
+				<div class="col-md-3 job-posts">
+					<div class="all_jobposts">
+						<%= link_to category_path(:job_posts) do %>
+							<%= image_tag('subnav_jobs.png') %> 
+							<span>JOB POSTS</span>
+						<% end %>
+					</div>
+				</div>
+				<div class="col-md-3 announcements">
+					<div class="all_announcements">
+						<%= link_to category_path(:announcements) do %>
+							<%=image_tag('subnav_announcements.png') %>
+							<span>ANNOUNCEMENTS</span>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-12" id="post-it-note">
+			<% @posts.each do |post| %>
+				<%= render partial: 'post_template', locals: {:post => post} %>
+			<% end %>
+		</div>		
+
+		<div class="col-md-12 pag-row">
+			<div class="row">
+				<div class="col-md-5 col-md-offset-3">
+					<%= will_paginate @posts, inner_window: 1,outer_window:1, renderer: BootstrapPagination::Rails %>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-12 footing">
+
+				<div class="col-md-4 col-md-offset-1 footerleft">
+					<p> 
+							Happy Fun Corp Alumni Forum<br>
+						<span>
+							Built for the students by the students
+						</span>
+					</p>
+				</div>
+				<div class="col-md-7 footerright pull-right">
+					<p>
+						Happy Fun Corp All rights Reserved
+					</p>
+				</div>
+		</div>
+	<!--xtradiv?-->
+</div>
+
+

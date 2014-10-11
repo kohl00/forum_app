@@ -1,0 +1,5 @@
+<% if @post_was_liked %>
+	$("#post-<%=@post.id %> .like_status").addClass("active");
+<% else %>
+	$("#post-<%=@post.id %> .like_status").removeClass("active");
+<% end %>

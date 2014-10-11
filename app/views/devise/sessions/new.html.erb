@@ -1,0 +1,46 @@
+<div id="landing-page-content" class="container-fluid">
+	<div class="row landing-page-content-row">
+	    <div class="col-md-4 col-md-offset-4 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+			<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+				<h3 class="welcome">Sign In</h3>
+				<div class="form-group">
+				  <%= f.email_field :email, :class=>'form-control',:placeholder =>'Email', autofocus: true %>
+				</div>
+				<div class="form-group">
+					<div class="input-group">
+				    	<%= f.password_field :password, :class=>'form-control', :placeholder =>'Password', autocomplete: "off" %>
+				    	<span class="input-group-btn">
+				    		<%=link_to '',:class=>'btn btn-default forgot' do %>
+				    			<%= image_tag('forgot_password.png')%>
+				    		<% end%>
+				    	</span>
+				    </div>
+				</div>
+				<div class="form-group log-in">
+				<% if devise_mapping.rememberable? -%>
+				    <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+				<% end %>
+					<%= f.submit "Sign in", :class=>'btn btn-secondary' %>
+				</div>
+			<% end %>
+	    </div>
+	</div>
+</div>
+<div id="landing-page-footer" class="container-fluid">
+	<div class="row">
+		<div class="col-md-1 text-right alert-icon-columns">
+    		<%= image_tag 'notice.png', :id=>'notice-icon' %>
+  		</div>
+	    <div class="col-md-7 col-sm-12 col-xs-12 description-columns">
+	      <p>
+	        This forum is only for current and past students of HFC Technology Academy.
+	        <br>
+	        If you would like more information on the academy or to join our mailing list, please click here. 
+	      </p>
+	      <p>&copy; 2014 HFC Alumni Forum All Rights Reserved.</p>
+	    </div>
+    	<div class="col-md-4 text-right hidden-sm hidden-xs hfc-academy-icon-columns pull-right">
+  			<%= image_tag 'forum_logo_lrg.png', :id=>'hfc-academy-logo' %>
+		</div>
+  	</div>
+</div>
