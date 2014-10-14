@@ -1,1 +1,1 @@
-$('.comments-on-post-<%=comment.post.id %>').append("<%= j (render :partial=>'comments/comment', :locals=>{:comment=>@comment}) %>");
+$('.comments-on-post-<%= @post.id %>').append("<%= j (render :partial=>'comments/comment', :locals=>{:comment=>@comment}) %>");

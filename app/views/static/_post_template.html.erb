@@ -7,7 +7,7 @@
 			</div>
 			<div class="col-md-8 post-text">
 				<p class="author">
-				  <span><%=post.user_id %></span> <%=post.created_at %>
+				  <span><%= post.user.full_name %></span> <span><%=post.created_at %></span>
 				</p>
 				<br>
 				<p class="text-body">
@@ -37,7 +37,7 @@
 		<% end %>
 		<div class="comments-row comments-on-post-<%=post.id %>">
 			<% post.comments.each do |comment| %>
-				<%= render :partial=>'comments/comment',:locals=>{:comment=> comment} %>
+				<%= render :partial=>'comments/comment' ,:locals=>{:comment=> comment} %>
 			<% end %>
 		</div>
 		<hr class="feed-divider"/>

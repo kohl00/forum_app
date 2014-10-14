@@ -9,11 +9,11 @@
 		</div>
 		<div class="row">
 			<ul class="link-buttons">
-				<li><div class="profile-shadow <%= 'disabled' if @user.email.empty? %>"><%= mail_to @user.email,image_tag('social_email.png'), target: "_blank" %></div></li>
-				<li><div class="profile-shadow <%= 'disabled' if @user.github_profile.empty? %>"><%= link_to image_tag('social_github.png'),@user.github_profile, target: "_blank" %></div></li>
-				<li><div class="profile-shadow <%= 'disabled' if @user.skype_profile.empty? %>"><%= link_to image_tag('social_skype.png'),@user.skype_profile, target: "_blank" %></div></li>
-				<li><div class="profile-shadow <%= 'disabled' if @user.twitter_profile.empty? %> "><%= link_to image_tag('social_twitter.png'),@user.twitter_profile, target: "_blank" %></div></li>
-				<li><div class="profile-shadow <%= 'disabled' if @user.personal_website.empty? %> "><%= link_to image_tag('social_website.png'), @user.personal_website, target: "_blank" %></div></li>
+				<li><div class="profile-shadow <%= 'disabled' if current_user && @user.email.blank? %>"><%= mail_to @user.email,image_tag('social_email.png'), target: "_blank" %></div></li>
+				<li><div class="profile-shadow <%= 'disabled' if current_user && @user.github_profile.blank? %>"/><%= link_to image_tag('social_github.png'),@user.github_profile, target: "_blank" %></div></li>
+				<li><div class="profile-shadow <%= 'disabled' if current_user && @user.skype_profile.blank? %>"><%= link_to image_tag('social_skype.png'),@user.skype_profile, target: "_blank" %></div></li>
+				<li><div class="profile-shadow <%= 'disabled' if current_user && @user.twitter_profile.blank? %> "><%= link_to image_tag('social_twitter.png'),@user.twitter_profile, target: "_blank" %></div></li>
+				<li><div class="profile-shadow <%= 'disabled' if current_user && @user.personal_website.blank? %> "><%= link_to image_tag('social_website.png'), @user.personal_website, target: "_blank" %></div></li>
 			</ul>
 		</div>
 	</div>			<!--name&links-->

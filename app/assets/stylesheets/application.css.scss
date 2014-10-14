@@ -346,12 +346,16 @@ background: $announcement-bg-dark;
 	}
 }
 
+.user-image{
+	padding-left:0px;
+}
 .friend-avatar{
 	border-radius:100%;
 	border: 1px solid $wtf-white;
 	margin-top:10px;
 	margin-bottom:10px;
 	width:65px;
+	height:65px;
 &.questions-post{
 border: 1px solid $questions-primary;
 }
@@ -616,7 +620,7 @@ input#user_first_name, input#user_last_name{
 	color:$wtf-white;
 	margin-left:10px;
 }
-.dropdown{
+.dropdown-directory{
 display:inline;
 margin-left: 800px;
 }
@@ -632,6 +636,8 @@ margin-left: 800px;
 	position:relative;
 	background: $brand-primary;
 	margin-bottom:30px;
+	height:179px;
+	width:179px;
 }
 span{
 	position:absolute;

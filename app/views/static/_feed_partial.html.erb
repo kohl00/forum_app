@@ -16,21 +16,21 @@
 					<div class="col-md-2 col-md-offset-1">
 						<% if @post.errors.any? %>
 				            <div id="error_explanation">
-				              	<h3><%= pluralize(@post.errors.count, "error") %> prohibited this activity from being saved: </h3>
 				              	<ul>
 				                	<%= @post.errors.full_messages.each do |msg| %>
-				                    	<li> <%= msg %></li>
+				                    	<li> <%= flash.now[:error]= msg %></li>
 	   								<% end %>
 	  							</ul>
 							</div>
 						<% end %>
 						<%= f.label :category, class: 'sr-only' %>
-	     				<%= f.select(:category,['Announcements','Jobs','Questions'],{include_blank: "Select a Topic"}, class: 'dropdown') %>
+	     				<%= f.select(:category,['Announcements','Jobs','Questions'],{include_blank: "Select a Topic"}, class: 'dropdown category-dropdown') %>
 					</div>
 					<div class="col-md-8 textarea-row">
 						<%= f.text_area :content, class: 'form-control' %>
 					</div>
 					<div class="col-md-1 submit-button">
+						
 						<%= f.submit "Submit", class: 'post-submit-post' %>
 					</div>
 				</div>

@@ -1,6 +1,6 @@
 	<div class="row">
 		<h4 class=" directory-head" style="display:inline-block">Student Directory</h4>
-		<div class="dropdown">
+		<div class="dropdown dropdown-directory">
 			  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
 			    Class No.
 			    <span class="caret"></span>
@@ -19,7 +19,8 @@
 			</div>
 			<% @students.each do |student| %>
 				<div class="col-md-2 cohort-box">
-					<img class="cohort-thumb img-responsive" src="http://placehold.it/250x250"/>
+					<!--img class="cohort-thumb img-responsive" src="http://placehold.it/250x250"/-->
+					<%= image_tag student.avatar.url(:medium), :class=>'cohort-thumb img-responsive' %>
 					<span> <%= student.full_name %></span>
 				</div>
 			<% end %>
