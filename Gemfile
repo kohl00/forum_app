@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'aws-sdk'
+gem 'gibbon', git: 'git://github.com/amro/gibbon.git'
 gem "dotenv-rails", groups: [:development, :test]
 gem "paperclip", "~> 4.2"
 gem 'unobtrusive_flash', '>=3'
@@ -39,6 +40,8 @@ gem 'spring',        group: :development
 group :production do
   gem "pg"
 end
+
+gem 'rails_12factor', group: :production
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
