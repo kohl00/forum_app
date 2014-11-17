@@ -16,7 +16,4 @@ class EmailapiController < ApplicationController
 
   private
 
-  def send_email
-  	current_user.subscribe
-  end
 end

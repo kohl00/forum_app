@@ -39,6 +39,7 @@ gem 'spring',        group: :development
 
 group :production do
   gem "pg"
+  gem "unicorn"
 end
 
 gem 'rails_12factor', group: :production
