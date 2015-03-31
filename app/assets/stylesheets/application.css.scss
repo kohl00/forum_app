@@ -537,6 +537,7 @@ input#user_first_name, input#user_last_name{
 }
 .about-section{
 	background:$brand-grey;
+	min-height:1100px;
 	.about-me,.interests{
 		font-family: $font-family-base;
 		color:$wtf-white;
@@ -550,6 +551,10 @@ input#user_first_name, input#user_last_name{
 	}
 	.interests p{
 		margin-bottom:50px;
+	}
+	.footing{
+		position: absolute;
+		bottom:0px;
 	}
 }
 
@@ -615,6 +620,11 @@ input#user_first_name, input#user_last_name{
 
 .directory-page{
 	background:$brand-grey;
+	overflow-x: hidden;
+}
+.directory-header{
+	padding-bottom: 40px;
+	padding-top: 5px;
 }
 .directory-head{
 	color:$wtf-white;
@@ -622,12 +632,13 @@ input#user_first_name, input#user_last_name{
 }
 .dropdown-directory{
 display:inline;
-margin-left: 800px;
+margin-left: 780px;
 }
 .cohort-group{
 	margin-bottom:10px;
 	padding-left:0px;
 	padding-right:0px;
+	min-height: 1100px;
 }
 .cohort-box{
 	padding-left:0px;
@@ -717,4 +728,9 @@ span{
 
 .profile-update-btn{
 	border-radius:5px;
+}
+
+.student-directory{
+ 	padding-right: 0px;
+ 	padding-left: 0px;
 }
