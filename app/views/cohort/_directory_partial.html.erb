@@ -21,7 +21,7 @@
 				<div class="col-md-2 cohort-box">
 					<!--img class="cohort-thumb img-responsive" src="http://placehold.it/250x250"/-->
 					<%= image_tag student.avatar.url(:medium), :class=>'cohort-thumb img-responsive' %>
-					<span> <%= student.full_name %></span>
+					<span> <%= link_to student.full_name, profile_show_path(student) %></span>
 				</div>
 			<% end %>
 		</div>

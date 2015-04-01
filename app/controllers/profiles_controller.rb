@@ -17,6 +17,11 @@ def update #update my profile
 	
 end
 
+def show
+	@user = User.find(params[:id])
+	render 'profile'
+end
+
 private
 
 def profile_params

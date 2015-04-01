@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   post 'profile/update' =>'profiles#update'
 
+  get '/profile/:id' => 'profiles#show', :as => :profile_show
 
   get 'likes/create'
 
@@ -27,8 +28,7 @@ Rails.application.routes.draw do
 
   get 'cohort/cohort' => 'cohort#directory', :as=> :cohort
 
-  get 'cohort/students/:id' => 'cohort#show', :as=> :students_profile
-
+  #get 'cohort/students/:id' => 'cohort#show', :as=> :students_profile
 
   get 'category/:category' => 'static#feed', :as => :category 
 

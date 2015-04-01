@@ -5,7 +5,9 @@
 	</div>			<!--profilepic-->
 	<div class="col-md-8">
 		<div class="row profile-name-edit">
+			<% if current_user.id === @user.id %>
 			<p><%= @user.full_name %></p><%= link_to image_tag('edit_icon.png'), profile_edit_path, :class=>'edit-icon'%>
+			<% end %>
 		</div>
 		<div class="row">
 			<ul class="link-buttons">
